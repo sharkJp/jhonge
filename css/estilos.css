@@ -285,3 +285,11 @@ text-align: center;
 #contacto .email a:hover {
   text-decoration: underline;
 }
+#formStatus{
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
