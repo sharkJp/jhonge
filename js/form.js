@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("TU_PUBLIC_KEY"); // ← reemplaza esto
+  emailjs.init("TU_PUBLIC_KEY_AQUI"); // ⚠️ MUY IMPORTANTE
 })();
 
 const form = document.getElementById("contactForm");
@@ -8,15 +8,11 @@ const status = document.getElementById("formStatus");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  status.textContent = "Enviando mensaje...";
-  status.style.color = "#555";
-
   emailjs
     .sendForm(
-      "service_fj97lra",
-  "TU_TEMPLATE_ID",
-  this
-      
+      "TU_SERVICE_ID",   // ejemplo: service_fi97lra
+      "TU_TEMPLATE_ID",  // ejemplo: template_xxxxx
+      this
     )
     .then(
       () => {
@@ -25,9 +21,9 @@ form.addEventListener("submit", function (e) {
         form.reset();
       },
       (error) => {
+        console.error("EmailJS Error:", error);
         status.textContent = "Error al enviar el mensaje ❌";
         status.style.color = "red";
-        console.error(error);
       }
     );
 });
