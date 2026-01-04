@@ -205,6 +205,10 @@ button[type="submit"] {
 .redes a:hover{
   color: var(--primary);
 }
+.redes a i{
+  font-size: 3rem;
+  color: var(--primary);
+}
 
 footer {
   text-align: center;
@@ -220,6 +224,10 @@ footer :nth-child(1){
 footer :nth-child(2){
   margin-top: 1rem;
   font-size: 0.8rem;
+}
+footer :nth-child(3) a{
+ text-decoration: none;
+ color: var(--primary);
 }
 
 /* ANIMACIONES SCROLL */
