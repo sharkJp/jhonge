@@ -271,5 +271,17 @@ html {
 }
 
 #contacto{
+text-align: center;
+  padding: 4rem 1rem;
+}
 
+#contacto .email a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+#contacto .email a:hover {
+  text-decoration: underline;
 }
