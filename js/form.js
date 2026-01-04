@@ -9,8 +9,8 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   emailjs.sendForm(
-    "service_fi97lra",
-    "TU_TEMPLATE_ID",
+     "service_fi97lra",
+  "template_contacto",
     this
   ).then(
     () => {
