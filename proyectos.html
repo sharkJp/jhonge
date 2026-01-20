@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Proyectos y Plantillas | Jhonge</title>
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/catalogo.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+
+
+</head>
+<body class="light">
+
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">Jhonge</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#proyectos">Volver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="intro-catalogo">
+            <h2>Catálogo de Soluciones Digitales</h2>
+            <p>Explora mis plantillas premium y sistemas personalizados. Todo el software es 100% editable y optimizado para SEO.</p>
+        </section>
+
+       <div class="filtros">
+    <button class="filter-btn active" data-categoria="todos">Todos</button>
+    <button class="filter-btn" data-categoria="sistema">Sistemas (CRUD)</button>
+    <button class="filter-btn" data-categoria="plantilla">Plantillas Web</button>
+    <button class="filter-btn" data-categoria="data">Data & Python</button>
+</div>
+
+        <div class="grid-catalogo">
+            
+            <article class="card-producto plantilla">
+                <div class="badge">Más Vendido</div>
+                <div class="img-container">
+                    <img src="img/preview-landing.jpg" alt="Plantilla Landing Page">
+                </div>
+                <div class="info-producto">
+                    <h3>Landing Page Pro v1.0</h3>
+                    <p>Ideal para captar leads. Incluye sección de servicios, testimonios y formulario funcional.</p>
+                    <div class="tech-stack">
+                        <span>HTML</span><span>CSS</span><span>JS</span>
+                    </div>
+                    <div class="precio-accion">
+                        <span class="precio">Desde $50 USD</span>
+                        <a href="https://wa.me/tu-numero" class="btn-comprar">Me interesa</a>
+                    </div>
+                    <a href="https://demo-link.vercel.app" target="_blank" class="link-demo">Ver demo en vivo →</a>
+                </div>
+            </article>
+
+            <article class="card-producto sistema">
+                <div class="img-container">
+                    <img src="img/preview-crm.jpg" alt="Sistema CRM">
+                </div>
+                <div class="info-producto">
+                    <h3>Sistema de Gestión (CRM)</h3>
+                    <p>Panel administrativo para control de clientes, citas y roles de usuario.</p>
+                    <div class="tech-stack">
+                        <span>PHP</span><span>MySQL</span><span>Tailwind</span>
+                    </div>
+                    <div class="precio-accion">
+                        <span class="precio">Cotizar Proyecto</span>
+                        <a href="index.html#contacto" class="btn-comprar">Consultar</a>
+                    </div>
+                    <a href="#" class="link-demo">Ver Video Tour →</a>
+                </div>
+            </article>
+
+              <article class="card-producto data">
+                <div class="img-container">
+                    <img src="img/preview-crm.jpg" alt="Sistema data">
+                </div>
+                <div class="info-producto">
+                    <h3>Sistema data</h3>
+                    <p>Panel administrativo para control de clientes, citas y roles de usuario.</p>
+                    <div class="tech-stack">
+                        <span>PHP</span><span>MySQL</span><span>Tailwind</span>
+                    </div>
+                    <div class="precio-accion">
+                        <span class="precio">Cotizar Proyecto</span>
+                        <a href="index.html#contacto" class="btn-comprar">Consultar</a>
+                    </div>
+                    <a href="#" class="link-demo">Ver Video Tour →</a>
+                </div>
+            </article>
+
+            </div>
+    </main>
+<script src="./js/filtros.js"></script>
+    <footer>
+        <p>© 2026 Jhonge | Soluciones Digitales a Medida</p>
+    </footer>
+
+</body>
+</html>
