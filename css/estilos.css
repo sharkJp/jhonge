@@ -159,11 +159,13 @@ section {
   transform: translateY(-6px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
+
+/*se debe borrar*/
 .landing_page {
    background-image: url("../imgs/landing_page.png");
 }
 
-.landing_page, .formulario {
+.landing_page, .formulario, .todolist {
   width: 100%;
   height: 300px;
   position: relative;
@@ -178,7 +180,9 @@ section {
 .formulario{
 background-image: url("../imgs/formulario.png");
 }
-
+.todolist{
+  background-image: url("../imgs/todolist.png");
+}
 /* .proyecto_destacado {
   border: 2px solid var(--primary);
   background: linear-gradient(
