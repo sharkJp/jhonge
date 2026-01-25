@@ -1,0 +1,439 @@
+:root {
+  --bg: #0f0f0f;
+  --card: #161616;
+  --text: #eaeaea;
+  --muted: #9aa0a6;
+  --accent: #ff4d6d;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+/* HEADER */
+.tuto-header {
+  border-bottom: 1px solid #222;
+  background: #1b1b1b;
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+}
+
+.tuto-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.tuto-header a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.logo {
+  font-weight: bold;
+  color: #ff7e67;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* FOOTER */
+.tuto-footer {
+  border-top: 1px solid #222;
+  margin-top: 4rem;
+  padding: 2rem 0;
+  color: var(--muted);
+  background: #121212;
+  padding: 50px 20px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.footer-links a {
+  margin-right: 1rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.redes a i {
+  font-size: 3rem;
+}
+
+footer.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+.footer-info h2 {
+  color: #ff7e67;
+  margin-bottom: 15px;
+}
+
+.footer-info p {
+  color: #ccc;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.redes {
+  display: flex;
+  gap: 20px;
+  font-size: 1.8rem;
+}
+
+.redes a {
+  color: white;
+  transition: 0.3s;
+}
+
+
+.donation-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.donation-card img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.donation-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.donation-card p {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.donation-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.donation-buttons a {
+  text-decoration: none;
+  background: #0070ba;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.nota {
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  text-align: left;
+}
+
+.nota p {
+  font-size: 0.75rem;
+  color: #777;
+  line-height: 1.4;
+  margin: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+h1 {
+  font-size: calc(1.8rem + 1vw);
+  color: #ff7e67;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+/* Efecto de brillo sutil para los botones */
+.btn-donar {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-donar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 126, 103, 0.3);
+}
+
+.btn-donar::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(30deg);
+  transition: all 0.5s;
+}
+
+.btn-donar:hover::after {
+  left: 120%;
+}
+
+.contacto {
+  display: flex;
+  position: relative;
+  color: #ff7e67;
+  font-size: 1rem;
+  text-decoration: none;
+  align-self: center;
+  font-weight: bold;
+  top: -10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer-info p:last-of-type {
+  margin-top: 25px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (OPTIMIZADO)
+   ========================================== */
+
+/* Tabletas y Móviles Grandes */
+@media (max-width: 768px) {
+
+ 
+  .tuto-header .container,
+  .tuto-footer .container {
+    padding: 0 15px;
+  }
+
+  /* Header Ajustes */
+  .tuto-header {
+    padding: 10px 0;
+    height: 120px;
+  }
+
+  .tuto-header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+    height: 45px;
+
+  }
+
+  .tuto-header nav a {
+    font-size: 1.4rem;
+    /* Tamaño legible en móvil */
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+.titulo-img{
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.titulo-img img{
+  position: relative;
+  top: -80px;
+  width: 70%;
+}
+ 
+  h1 {
+    position: relative;
+    top: 90px;
+    font-size: 6rem;
+    text-align: center;
+  }
+  .muted, 
+  .section-main h2, 
+  .section-tech h2,
+  .section-install h2,
+  .section-install h3,
+  .section-links h2{
+    font-size: 2rem;
+  }
+  .muted-2,
+  .section-main p,
+  .section-tech ul li,
+  .section-links a{
+    font-size: 1.5rem;
+  }
+ 
+
+  /* Footer Ajustes */
+  .tuto-footer .container {
+    grid-template-columns: 1fr;
+    /* Una sola columna */
+    gap: 30px;
+  }
+
+  .footer-info {
+    text-align: center;
+  }
+  .footer-info h2 {
+    font-size: 2rem;
+  }
+
+  .redes {
+    justify-content: center;
+    margin: 30px 0;
+    gap: 40px;
+
+  }
+
+  .redes a i {
+    font-size: 2.5rem;
+    /* Iconos grandes pero controlados */
+  }
+
+  .contacto {
+    font-size: 1.2rem;
+    top: -20px;
+  }
+
+  .tuto-footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+ 
+
+  .footer-info p {
+    font-size: 1.3rem;
+  }
+
+  .footer-info p:last-of-type {
+    font-size: 1rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  nav {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  .donation-card {
+    padding: 15px;
+  }
+
+  .donation-buttons a {
+    padding: 15px;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+.logo-dev {
+  font-family: ui-monospace, monospace;
+  text-align: center;
+}
+
+.tag {
+  color: #ff7e67;
+}
+
+.progress {
+  width: 220px;
+  height: 4px;
+  background: rgba(255,255,255,0.15);
+  margin: 8px auto 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #ff7e67;
+  transition: width 0.2s linear;
+}
+
+.progress-label {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.7rem;
+  color: #888;
+}
+
