@@ -35,20 +35,49 @@
            <span>PayPal (Global)</span>
         </a>
 
-        <a href="#" id="wompi-btn" onclick="alert('El pago nacional estará disponible en 24-48h tras la validación de Wompi.')"
+        <!-- <a href="#" id="wompi-btn" onclick="alert('El pago nacional estará disponible en 24-48h tras la validación de Wompi.')"
            style="text-decoration: none; background: #333; color: #888; padding: 12px; border-radius: 10px; font-size: 0.9rem; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: help;">
            <i class="fa-solid fa-credit-card"></i>
            <span>Nequi, PSE (Colombia)</span>
-        </a>
+        </a> -->
+        <div class="wompi-montos">
+           <label>
+    <input type="radio" name="monto" value="200000" checked>
+    $2.000
+  </label>
+  <label>
+    <input type="radio" name="monto" value="300000" checked>
+    $3.000
+  </label>
+  <label>
+    <input type="radio" name="monto" value="500000">
+    $5.000
+  </label>
+  <label>
+    <input type="radio" name="monto" value="1000000">
+    $10.000
+  </label>
+</div>
+
+        <button id="wompi-btn"class="btn-wompi">
+  <i class="fa-solid fa-credit-card"></i>
+  <span>Nequi, PSE (Colombia)</span>
+</button>
+
         
       </div>
 
       <div class="nota">
         <p>
-            <strong>Nota de Transparencia:</strong> Tus donaciones se destinan directamente a cubrir los costos de infraestructura de <strong>Vercel</strong> y la base de datos <strong>Supabase Realtime</strong>. Gracias por ayudarme a mantener estas herramientas gratuitas y sin publicidad.
-        </p>
+            <strong>Nota de transparencia:</strong>
+          Las donaciones cubren costos de infraestructura
+          (<strong>Vercel</strong> y <strong>Supabase</strong>).
+          Sin anuncios, sin trackers. </p>
       </div>
     </div>
 
   </div>
 </footer>
+<!-- Script oficial -->
+<script src="https://checkout.wompi.co/widget.js"></script>
+<script type="module" src="/shared/wompi.js"></script>

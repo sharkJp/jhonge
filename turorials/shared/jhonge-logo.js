@@ -22,11 +22,12 @@ class JhongeLogo extends HTMLElement {
           display: flex;
           flex-direction: column;
           gap: 8px;
-          max-width: 260px;
+          max-width:280px;
+          height: 90px;
         }
 
         .name {
-          font-size: 1.2rem;
+          font-size: 2rem;
           font-weight: bold;
           color: #ff7e67;
         }

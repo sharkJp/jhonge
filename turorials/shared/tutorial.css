@@ -28,10 +28,10 @@ body {
 
 /* HEADER */
 .tuto-header {
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #ff7e6749;
   background: #1b1b1b;
   padding: 15px 0;
-  border-bottom: 1px solid #333;
+
 }
 
 .tuto-header .container {
@@ -75,7 +75,7 @@ nav a {
 
 /* FOOTER */
 .tuto-footer {
-  border-top: 1px solid #222;
+  border-top: 1px solid #ff7e6749;
   margin-top: 4rem;
   padding: 2rem 0;
   color: var(--muted);
@@ -254,7 +254,21 @@ a {
   font-size: 0.8rem;
   color: #555;
 }
-
+  .muted, 
+  .section-main h2, 
+  .section-tech h2,
+  .section-install h2,
+  .section-install h3,
+  .section-links h2{
+    font-size: 2.4rem;
+  }
+  .muted-2,
+  .section-main p,
+  .section-tech ul li,
+  .section-links a{
+    font-size: 1.6rem;
+  }
+ 
 /* ==========================================
    RESPONSIVE DESIGN (OPTIMIZADO)
    ========================================== */
@@ -271,7 +285,7 @@ a {
   /* Header Ajustes */
   .tuto-header {
     padding: 10px 0;
-    height: 120px;
+    height: 210px;
   }
 
   .tuto-header .container {
@@ -290,7 +304,7 @@ a {
   }
 
   .tuto-header nav a {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     /* Tamaño legible en móvil */
   }
 
@@ -319,21 +333,7 @@ a {
     font-size: 6rem;
     text-align: center;
   }
-  .muted, 
-  .section-main h2, 
-  .section-tech h2,
-  .section-install h2,
-  .section-install h3,
-  .section-links h2{
-    font-size: 2rem;
-  }
-  .muted-2,
-  .section-main p,
-  .section-tech ul li,
-  .section-links a{
-    font-size: 1.5rem;
-  }
- 
+
 
   /* Footer Ajustes */
   .tuto-footer .container {
@@ -437,3 +437,32 @@ a {
   color: #888;
 }
 
+.btn-wompi {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #c800ad, #640444);
+  color: #310b3d;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  animation: pulseGlow 1.8s infinite;
+  box-shadow: 0 0 20px rgba(138, 56, 245, 0.6);
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); box-shadow: 0 0 10px rgba(49, 238, 238, 0.6);}
+  50% { transform: scale(1.02); box-shadow: 0 0 15px rgba(65, 238, 224, 0.9);}
+  100% { transform: scale(1); box-shadow: 0 0 10px rgba(5, 214, 241, 0.6);}
+}
+#wompi-btn {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+#wompi-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(138,43,226,.5);
+}
+#wompi-btn:active {
+  transform: scale(.97);
+}

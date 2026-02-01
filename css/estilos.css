@@ -113,10 +113,11 @@ section {
 /* GRID REAL PARA ICONOS */
 .grid-icons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
   align-items: center;
   justify-items: center;
+
 }
 
 /* CONTENEDOR DEL ICONO */
@@ -124,23 +125,33 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* ICONO */
+/* skills*/
 .tecnologias span i {
-  color: var(--text);
   opacity: 1;
+  font-size: 4rem;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* HOVER PROFESIONAL */
 .tecnologias span:hover {
   transform: translateY(-6px) scale(1.05);
   opacity: 1;
+  filter: brightness(1.15);
 }
 
+.tech-detail {
+  position: relative;
+  left: 17%;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #9aa0a6;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
 
+/*project**/
 .grid-proyectos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -386,7 +397,9 @@ html {
   p {
     font-size: 1rem;
   }
-
+.tech-detail {
+  left: 0%;
+}
 }
 
 #contacto {

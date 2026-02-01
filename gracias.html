@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gracias por tu apoyo 💚</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(0,0,0,.35);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    .badge {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00c853, #64dd17);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      color: #0b3d1b;
+      animation: pulse 1.8s infinite;
+      box-shadow: 0 0 30px rgba(100,221,23,.6);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1);}
+      50% { transform: scale(1.08);}
+      100% { transform: scale(1);}
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: .95;
+      line-height: 1.5;
+    }
+
+    .amount {
+      margin: 15px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #7CFF9B;
+    }
+
+    .btn {
+      margin-top: 25px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #00c853;
+      color: #0b3d1b;
+      padding: 14px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 10px 25px rgba(0,200,83,.4);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(0,200,83,.6);
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: .85rem;
+      opacity: .7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="badge">
+      <i class="fa-solid fa-heart"></i>
+    </div>
+
+    <h1>¡Gracias por tu apoyo!</h1>
+    <p>
+      Tu aporte ayuda directamente a mantener activos los proyectos,
+      servidores y herramientas sin publicidad.
+    </p>
+
+    <div class="amount" id="amount">💚 Aporte recibido</div>
+
+    <a href="/" class="btn">
+      <i class="fa-solid fa-house"></i>
+      Volver al sitio
+    </a>
+
+    <footer>
+      Hecho en 🇨🇴 con Supabase & Vercel
+    </footer>
+  </div>
+
+  <script>
+    // 🎉 Confetti
+    confetti({
+      particleCount: 160,
+      spread: 90,
+      origin: { y: 0.6 }
+    });
+
+    // 📌 Leer monto si luego lo pasas por URL
+    const params = new URLSearchParams(window.location.search);
+    const amount = params.get('amount');
+
+    if (amount) {
+      document.getElementById('amount').innerText =
+        `💰 Donación de $${amount} COP recibida`;
+    }
+  </script>
+
+</body>
+</html>
