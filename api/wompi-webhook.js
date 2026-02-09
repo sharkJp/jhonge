@@ -6,25 +6,42 @@ const supabase = createClient(
 );
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).send("Method not allowed");
+  try {
+    if (req.method !== "POST") {
+      return res.status(200).json({ status: "alive" });
+    }
+
+    const event = req.body;
+
+    if (!event || !event.data || !event.data.transaction) {
+      return res.status(400).json({ error: "Invalid payload" });
+    }
+
+    const tx = event.data.transaction;
+
+    const data = {
+      wompi_transaction_id: tx.id,
+      monto: tx.amount_in_cents,
+      moneda: tx.currency,
+      estado: tx.status,
+      metodo_pago: tx.payment_method_type,
+      email: tx.customer_email || null,
+      referencia: tx.reference
+    };
+
+    const { error } = await supabase
+      .from("donaciones")
+      .upsert(data);
+
+    if (error) {
+      console.error("Supabase error:", error);
+      return res.status(500).json({ error: "DB insert failed" });
+    }
+
+    return res.status(200).json({ received: true });
+
+  } catch (err) {
+    console.error("Webhook crash:", err);
+    return res.status(500).json({ error: "Webhook crashed" });
   }
-
-  const event = req.body;
-
-  if (!event?.data?.transaction) {
-    return res.status(200).send("ignored");
-  }
-
-  const t = event.data.transaction;
-
-  await supabase.from("donaciones").upsert({
-    wompi_id: t.id,
-    referencia: t.reference,
-    monto: t.amount_in_cents,
-    estado: t.status,
-    metodo: t.payment_method_type
-  });
-
-  return res.status(200).send("ok");
 }

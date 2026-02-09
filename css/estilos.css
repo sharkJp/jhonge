@@ -180,7 +180,8 @@ section {
 .landing_page,
 .romeo,
 .todolist,
-.devsheet {
+.devsheet,
+.umbrio{
   width: 100%;
   height: 300px;
   position: relative;
@@ -192,6 +193,19 @@ section {
   border-radius: 12px;
   border: 1px solid var(--border);
 }
+.umbrio{
+  position: relative;
+  padding: 0; /* importante */
+  overflow: hidden;
+}
+.umbrio video {
+  position: absolute;
+  inset: 0; /* top right bottom left = 0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 .romeo {
   background-image: url("../imgs/icon-512.png");
