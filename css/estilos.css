@@ -181,7 +181,8 @@ section {
 .romeo,
 .todolist,
 .devsheet,
-.umbrio{
+.umbrio,
+.yuredo{
   width: 100%;
   height: 300px;
   position: relative;
@@ -218,7 +219,9 @@ section {
 .devsheet {
   background-image: url("../imgs/devsheet.png");
 }
-
+.yuredo{
+  background-image: url("../imgs/yuredo.png");
+}
 .proyecto_destacado {
   border: 2px solid var(--primary);
   background: linear-gradient(180deg,

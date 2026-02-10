@@ -113,6 +113,9 @@
 
 /* Tags de tecnología */
 .tech-stack {
+    display: flex;
+    flex-wrap: wrap;        /* permite saltos de línea */
+    gap: 8px;               /* separación uniforme */
     margin-bottom: 20px;
 }
 
@@ -123,8 +126,13 @@
     font-size: 0.75rem;
     margin-right: 5px;
     font-weight: 600;
+    white-space: nowrap;  
 }
-
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+}
 /* Precio y Botón */
 .precio-accion {
     display: flex;
