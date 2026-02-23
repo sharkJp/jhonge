@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("oMjs61nv4FaTHf7YY"); // tu Public Key
+  emailjs.init("oMjs61nv4FaTHf7YY"); // Tu Public Key
 })();
 
 const form = document.getElementById("contactForm");
@@ -9,7 +9,6 @@ const button = form.querySelector("button");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // Validación mínima
   const nombre = form.nombre.value.trim();
   if (nombre.length < 3) {
     status.textContent = "El nombre debe tener al menos 3 caracteres.";
@@ -17,26 +16,35 @@ form.addEventListener("submit", function (e) {
     return;
   }
 
-  // Estado enviando
   button.disabled = true;
   button.textContent = "Enviando...";
   status.textContent = "";
 
+  // 1. Envía el correo principal para TI
   emailjs.sendForm(
-    "service_fi97lra",
-    "template_s3t5s6j",
+    "service_fi97lra", 
+    "template_s3t5s6j", 
     this
   ).then(
     () => {
-      status.textContent =
-        "Gracias por contactarme. Te responderé en menos de 24 horas.";
+      // 2. Envía la RESPUESTA AUTOMÁTICA al usuario
+      // Reemplaza el segundo ID por el de tu nueva plantilla de Auto-Reply
+      emailjs.sendForm(
+       "service_fi97lra", 
+        "template_83was5j",
+        form
+      ).then(
+        () => console.log("Auto-reply enviado con éxito."),
+        (err) => console.error("Error en Auto-reply:", err)
+      );
+
+      status.textContent = "Gracias por contactarme. Te responderé en menos de 24 horas.";
       status.style.color = "green";
       form.reset();
     },
     (error) => {
       console.error("EmailJS Error:", error);
-      status.textContent =
-        "Ocurrió un error. Intenta nuevamente o escríbeme por correo.";
+      status.textContent = "Ocurrió un error. Intenta nuevamente o escríbeme por correo.";
       status.style.color = "red";
     }
   ).finally(() => {
@@ -44,4 +52,3 @@ form.addEventListener("submit", function (e) {
     button.textContent = "Enviar";
   });
 });
-
